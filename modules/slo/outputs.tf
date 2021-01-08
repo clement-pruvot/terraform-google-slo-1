@@ -22,6 +22,7 @@ output "project_id" {
 output "config" {
   description = "SLO Config"
   value       = var.config
+  sensitive   = true
 }
 
 output "service_account_email" {
@@ -32,11 +33,13 @@ output "service_account_email" {
 output "scheduler_job_name" {
   description = "Cloud Scheduler job name"
   value       = google_cloud_scheduler_job.scheduler.name
+  sensitive   = true
 }
 
 output "function_name" {
   description = "Cloud Function name"
   value       = google_cloudfunctions_function.function.name
+  sensitive   = true
 }
 
 output "function_bucket_name" {
