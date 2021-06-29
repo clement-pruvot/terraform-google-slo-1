@@ -26,12 +26,12 @@ from slo_generator import compute
 LOGGER = logging.getLogger(__name__)
 
 def main(data, context):
-    LOGGER.info("Downloading configs from GCS")
+    LOGGER.debug("Downloading configs from GCS")
     error_budget_policy = download_gcs("${error_budget_policy_url}")
     slo_config = download_gcs("${slo_config_url}")
-    LOGGER.info("Running SLO computations:")
-    LOGGER.info("SLO Config: %s", pprint.pformat(slo_config))
-    LOGGER.info("Error Budget Policy: %s",
+    LOGGER.debug("Running SLO computations:")
+    LOGGER.debug("SLO Config: %s", pprint.pformat(slo_config))
+    LOGGER.debug("Error Budget Policy: %s",
                  pprint.pformat(error_budget_policy))
     timestamp = fetch_timestamp(data, context)
     compute.compute(slo_config,
