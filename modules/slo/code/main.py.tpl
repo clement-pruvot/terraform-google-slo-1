@@ -36,7 +36,7 @@ def main(data, context):
                  pprint.pformat(error_budget_policy))
     timestamp = fetch_timestamp(data, context)
     tempo=randint(0, 55)
-    LOGGER.debug(f'Dispatch call API - wait: "{tempo}")
+    LOGGER.debug(f'Dispatch call API - wait: "{tempo}"')
     time.sleep(tempo)
     LOGGER.debug("End wait")
     compute.compute(slo_config,
